@@ -1,5 +1,7 @@
 ## Introduction
 
+This is my submission for the first course project for the Exploratory Data Analysis class, part of the Data Science specialization offered by Johns Hopkins University on Coursera
+
 This assignment uses data from
 the <a href="http://archive.ics.uci.edu/ml/">UC Irvine Machine
 Learning Repository</a>, a popular repository for machine learning

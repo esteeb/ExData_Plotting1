@@ -73,3 +73,38 @@ legend(
 )
 dev.off()
 plot.new()
+
+# Step 4 Plot 4
+png("Plot 4.png")
+par(mfrow = c(2,2))
+plot(rel_data$Global_active_power ~ rel_data$Date.Time, type = "l", xlab = "", ylab = "Global Active Power (kilowatts)", main = "Global Active Power by time")
+plot(rel_data$Voltage ~ rel_data$Date.Time, type = "l", xlab = "", ylab = "Voltage", main = "Voltage over time")
+plot(
+  rel_data$Sub_metering_1 ~ rel_data$Date.Time,
+  type = "l",
+  xlab = "",
+  ylab = "Energy sub-metering",
+  main = "Energy sub-metering over time"
+)
+lines(
+  rel_data$Sub_metering_2 ~ rel_data$Date.Time,
+  col = "blue"
+)
+lines(
+  rel_data$Sub_metering_3 ~ rel_data$Date.Time,
+  col = "red"
+)
+legend(
+  x = "topright",
+  legend = c("sub_meter 1", "sub_meter 2", "sub_meter 3"),
+  col = c("black", "blue", "red"),
+  lty = c(1, 1, 1)
+)
+plot(
+  rel_data$Global_reactive_power ~ rel_data$Date.Time,
+  type = "l",
+  xlab = "",
+  ylab = "Global Reactive Power (kilowatts)",
+  main = "Global reactive power over time"
+)
+dev.off()
