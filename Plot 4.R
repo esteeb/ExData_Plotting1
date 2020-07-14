@@ -36,44 +36,7 @@ rel_data <- dataset%>%
 # Remove dataset to save space before making our plots
 rm(dataset)
 
-# Step 1 Plot 1
-png("Plot 1.png")
-hist(rel_data$Global_active_power, xlab = "Global Active Power", main = "Global Active Power")
-dev.off()
-plot.new()
-
-# Step 2 Plot 2
-png("Plot 2.png")
-plot(rel_data$Global_active_power ~ rel_data$Date.Time, type = "l", xlab = "", ylab = "Global Active Power (kilowatts)", main = "Global Active Power by time")
-dev.off()
-plot.new()
-
-# Step 3 Plot 3
-png("Plot 3.png")
-plot(
-  rel_data$Sub_metering_1 ~ rel_data$Date.Time,
-  type = "l",
-  xlab = "",
-  ylab = "Energy sub-metering",
-  main = "Energy sub-metering over time"
-)
-lines(
-  rel_data$Sub_metering_2 ~ rel_data$Date.Time,
-  col = "blue"
-)
-lines(
-  rel_data$Sub_metering_3 ~ rel_data$Date.Time,
-  col = "red"
-)
-legend(
-  x = "topright",
-  legend = c("sub_meter 1", "sub_meter 2", "sub_meter 3"),
-  col = c("black", "blue", "red"),
-  lty = c(1, 1, 1)
-)
-dev.off()
-plot.new()
-
+# Plot 4
 # Step 4 Plot 4
 png("Plot 4.png")
 par(mfrow = c(2,2))
